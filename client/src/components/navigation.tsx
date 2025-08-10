@@ -36,7 +36,7 @@ export function Navigation() {
             data-testid="nav-brand"
           >
             <i className="fas fa-heart text-red-500"></i>
-            For My Best Friend
+            Happy Birthday!
           </button>
           
           <div className="hidden md:flex items-center space-x-8">
@@ -49,11 +49,11 @@ export function Navigation() {
               <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-pink transition-all duration-300 group-hover:w-4/5"></span>
             </button>
             <button
-              onClick={() => scrollToSection('thank-you')}
+              onClick={() => scrollToSection('birthday-message')}
               className="nav-link font-medium text-charcoal hover:text-primary-pink transition-colors duration-300 relative group"
-              data-testid="nav-thank-you"
+              data-testid="nav-birthday-message"
             >
-              Thank You
+              Birthday Message
               <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-pink transition-all duration-300 group-hover:w-4/5"></span>
             </button>
             <button

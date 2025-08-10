@@ -1,8 +1,8 @@
 # Overview
 
-This is a React-based friend tribute website that creates a personalized, heartfelt experience for someone special. The application features a single-page layout with multiple sections including a hero area, personal message, photo gallery, and memory timeline. It's designed to be customizable with personal content like friend names, messages, photos, and shared memories.
+This is a React-based birthday tribute website that creates a personalized, heartfelt experience for celebrating someone special. The application features a single-page layout with multiple sections including a hero area with birthday greeting, combined birthday/thank you message, photo gallery showcasing the birthday person, and memory timeline. It's designed to be customizable with personal content like friend names, birthday messages, photos, and shared memories.
 
-The project uses modern web technologies including React with TypeScript, TailwindCSS for styling, and shadcn/ui components for a polished interface. The application includes interactive elements like floating hearts, smooth scrolling navigation, and animated content reveals.
+The project uses modern web technologies including React with TypeScript, TailwindCSS for styling, and shadcn/ui components for a polished interface. The application includes interactive elements like floating hearts, confetti animations, smooth scrolling navigation, and animated content reveals.
 
 # User Preferences
 
