@@ -1,0 +1,892 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Gift for My Best Friend</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-pink: #FFB6C1;
+            --primary-lavender: #E6E6FA;
+            --warm-white: #FEFEFE;
+            --soft-peach: #FFCCCB;
+            --mint-green: #F0FFF0;
+            --soft-blue: #E0F6FF;
+            --rose-gold: #E8B4B8;
+            --golden-yellow: #FFF8DC;
+            --charcoal: #333333;
+            --soft-gray: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--warm-white) 0%, var(--primary-lavender) 100%);
+            color: var(--charcoal);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Floating Hearts Animation */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            color: var(--primary-pink);
+            font-size: 20px;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--charcoal) !important;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--charcoal) !important;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-pink) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background: var(--primary-pink);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-lavender) 0%, var(--soft-blue) 50%, var(--primary-pink) 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--soft-gray);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .friend-name {
+            /* CUSTOMIZATION POINT: Replace "Best Friend's Name" with actual name */
+            color: var(--primary-pink);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--rose-gold);
+        }
+
+        .hero-image {
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+            animation: fadeInRight 1s ease-out 0.4s both;
+        }
+
+        .hero-image:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Thank You Message */
+        .thank-you-section {
+            background: var(--golden-yellow);
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .thank-you-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border: 3px solid var(--primary-pink);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .thank-you-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-pink), var(--rose-gold), var(--primary-lavender));
+        }
+
+        .thank-you-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+            text-align: center;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background: var(--mint-green);
+            padding: 5rem 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.8), rgba(232, 180, 184, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .overlay-text {
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        /* Memory Timeline */
+        .memory-section {
+            background: linear-gradient(135deg, var(--soft-peach) 0%, var(--primary-lavender) 100%);
+            padding: 5rem 0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--primary-pink);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .timeline-content {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+            width: 45%;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 55%;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: 55%;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--primary-pink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .memory-date {
+            color: var(--primary-pink);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .memory-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+        }
+
+        .memory-description {
+            color: var(--soft-gray);
+            line-height: 1.6;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-pink), var(--rose-gold));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--soft-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+                margin-right: 0 !important;
+            }
+            
+            .timeline-icon {
+                left: 20px;
+                transform: none;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+            
+            .thank-you-card {
+                padding: 2rem;
+            }
+            
+            .thank-you-text {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Confetti Animation */
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--primary-pink);
+            animation: confetti-fall 3s linear infinite;
+        }
+
+        .confetti-piece:nth-child(odd) {
+            background: var(--rose-gold);
+            animation-delay: 0.5s;
+        }
+
+        .confetti-piece:nth-child(3n) {
+            background: var(--primary-lavender);
+            animation-delay: 1s;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="floating-hearts" id="floating-hearts"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-heart text-danger me-2"></i>
+                For My Best Friend
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#thank-you">Thank You</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#memories">Memories</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            Welcome to Your Special Place, 
+                            <span class="friend-name">Best Friend's Name</span>!
+                            <!-- CUSTOMIZATION POINT: Replace "Best Friend's Name" with actual name -->
+                        </h1>
+                        <p class="hero-subtitle">
+                            This little corner of the internet is dedicated entirely to you and all the amazing memories we've shared together.
+                            <!-- CUSTOMIZATION POINT: Customize this welcome message -->
+                        </p>
+                        <div class="d-flex gap-3">
+                            <a href="#thank-you" class="btn btn-lg px-4 py-3" style="background: var(--primary-pink); border: none; color: white; border-radius: 50px; font-weight: 600;">
+                                <i class="fas fa-heart me-2"></i>Read My Message
+                            </a>
+                            <a href="#gallery" class="btn btn-outline-secondary btn-lg px-4 py-3" style="border-radius: 50px; font-weight: 600;">
+                                <i class="fas fa-images me-2"></i>View Gallery
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <!-- CUSTOMIZATION POINT: Replace this placeholder image with a photo of you both -->
+                    <!-- A joyful photo of two best friends laughing together in a sunny park -->
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Photo of best friends together" 
+                         class="img-fluid hero-image" 
+                         data-mock="true" 
+                         data-implementation="Replace with actual photo of you and your friend">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thank You Message Section -->
+    <section id="thank-you" class="thank-you-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="thank-you-card fade-in">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-heart" style="font-size: 3rem; color: var(--primary-pink);"></i>
+                        </div>
+                        <p class="thank-you-text">
+                            You're really special to me. Thank you for being in my life. I hope I keep annoying you forever. May you succeed in life — and don't forget to buy me protein powder 😂
+                            <!-- CUSTOMIZATION POINT: This is the specified thank-you message, but feel free to modify it -->
+                        </p>
+                        <div class="text-center mt-4">
+                            <div class="d-inline-flex gap-3">
+                                <i class="fas fa-star" style="color: var(--golden-yellow); font-size: 1.5rem;"></i>
+                                <i class="fas fa-heart" style="color: var(--primary-pink); font-size: 1.5rem;"></i>
+                                <i class="fas fa-star" style="color: var(--golden-yellow); font-size: 1.5rem;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Our Photo Gallery</h2>
+                <p class="section-subtitle">
+                    A collection of all our favorite moments together. Each photo tells a story of our incredible friendship.
+                </p>
+            </div>
+            
+            <div class="gallery-grid fade-in">
+                <!-- CUSTOMIZATION POINT: Replace these placeholder images with real photos -->
+                <div class="gallery-item" data-mock="true">
+                    <!-- Two friends taking a selfie together at a coffee shop -->
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" alt="Memory 1">
+                    <div class="gallery-overlay">
+                        <p class="overlay-text">Coffee Shop Adventures</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-mock="true">
+                    <!-- Friends hiking together on a beautiful mountain trail -->
+                    <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" alt="Memory 2">
+                    <div class="gallery-overlay">
+                        <p class="overlay-text">Mountain Adventures</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-mock="true">
+                    <!-- Friends celebrating at a birthday party with balloons -->
+                    <img src="https://pixabay.com/get/gc3a8ab8ab297dd7f60e185c6b8c12d75dfb8805b01fcb40fc3622a9ca4be0aad4d2093d767f5b3dc1cff25338df9e02c12b6c2f9a5530216414892b554941048_1280.jpg" alt="Memory 3">
+                    <div class="gallery-overlay">
+                        <p class="overlay-text">Birthday Celebrations</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-mock="true">
+                    <!-- Friends at the beach during sunset -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" alt="Memory 4">
+                    <div class="gallery-overlay">
+                        <p class="overlay-text">Beach Sunsets</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-mock="true">
+                    <!-- Friends cooking together in a kitchen -->
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" alt="Memory 5">
+                    <div class="gallery-overlay">
+                        <p class="overlay-text">Cooking Disasters</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-mock="true">
+                    <!-- Friends at a concert or music festival -->
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" alt="Memory 6">
+                    <div class="gallery-overlay">
+                        <p class="overlay-text">Concert Nights</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memory Timeline Section -->
+    <section id="memories" class="memory-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Our Memory Timeline</h2>
+                <p class="section-subtitle">
+                    A journey through all the special moments that have made our friendship so incredible.
+                </p>
+            </div>
+            
+            <div class="timeline">
+                <!-- CUSTOMIZATION POINT: Add your actual memories and dates here -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="memory-date">Date: [Add Date Here]</div>
+                        <h3 class="memory-title">How We First Met</h3>
+                        <p class="memory-description">
+                            [Add your story about how you first met here. This could be at school, work, through mutual friends, or any other special circumstance that brought you together.]
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-icon">
+                        <i class="fas fa-laugh"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="memory-date">Date: [Add Date Here]</div>
+                        <h3 class="memory-title">That Hilarious Moment</h3>
+                        <p class="memory-description">
+                            [Add a funny memory here. Maybe it was an embarrassing moment you shared, a joke that became an inside reference, or a silly adventure you went on together.]
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="memory-date">Date: [Add Date Here]</div>
+                        <h3 class="memory-title">When I Realized You Were Special</h3>
+                        <p class="memory-description">
+                            [Share the moment when you realized this person was going to be an important part of your life. Maybe they helped you through a tough time, or you had a deep conversation that changed everything.]
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="memory-date">Date: [Add Date Here]</div>
+                        <h3 class="memory-title">Our Adventure Together</h3>
+                        <p class="memory-description">
+                            [Describe a trip, adventure, or special outing you took together. This could be a vacation, a spontaneous road trip, or even just exploring your local city.]
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="memory-date">Date: [Add Date Here]</div>
+                        <h3 class="memory-title">Recent Amazing Memory</h3>
+                        <p class="memory-description">
+                            [Add a recent memory that shows how your friendship continues to grow and create new special moments together.]
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="memory-date">Present Day</div>
+                        <h3 class="memory-title">Our Friendship Today</h3>
+                        <p class="memory-description">
+                            [Write about what your friendship means to you now and your hopes for the future. This is a great place to add more personal, heartfelt sentiments.]
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap 5 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Wrapped in IIFE to avoid global scope pollution
+        (function() {
+            // Floating Hearts Animation
+            function createFloatingHeart() {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '💖';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                heart.style.fontSize = (Math.random() * 10 + 15) + 'px';
+                
+                document.getElementById('floating-hearts').appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 6000);
+            }
+
+            // Create hearts periodically
+            setInterval(createFloatingHeart, 2000);
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all fade-in elements
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Add some celebratory confetti on page load
+            function createConfetti() {
+                const confettiContainer = document.createElement('div');
+                confettiContainer.className = 'confetti';
+                document.body.appendChild(confettiContainer);
+
+                for (let i = 0; i < 50; i++) {
+                    const confettiPiece = document.createElement('div');
+                    confettiPiece.className = 'confetti-piece';
+                    confettiPiece.style.left = Math.random() * 100 + '%';
+                    confettiPiece.style.animationDelay = Math.random() * 3 + 's';
+                    confettiPiece.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    confettiContainer.appendChild(confettiPiece);
+                }
+
+                // Remove confetti after animation
+                setTimeout(() => {
+                    confettiContainer.remove();
+                }, 5000);
+            }
+
+            // Trigger confetti on page load
+            window.addEventListener('load', () => {
+                setTimeout(createConfetti, 1000);
+            });
+
+            // Gallery item hover effects
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    // TODO: Add any additional interactive effects here
+                });
+            });
+
+            // Thank you card special effect
+            const thankYouCard = document.querySelector('.thank-you-card');
+            if (thankYouCard) {
+                thankYouCard.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                thankYouCard.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            }
+
+            // Navbar background on scroll
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                } else {
+                    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                }
+            });
+
+            console.log('🎉 Personal tribute website loaded successfully!');
+            console.log('💖 Customization points marked throughout the code for easy editing');
+        })();
+    </script>
+</body>
+</html>
