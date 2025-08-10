@@ -11,43 +11,37 @@ export function GallerySection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
-  // CUSTOMIZATION POINT: Replace these with actual photos of your friend
+  // Beautiful photos of Achu
   const galleryItems: GalleryItem[] = [
     {
       id: 1,
-      src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800",
-      alt: "Beautiful Smile",
+      src: "/assets/IMG_20250810_232336_1754848537138.jpg",
+      alt: "Achu's Beautiful Smile",
       caption: "That Beautiful Smile"
     },
     {
       id: 2,
-      src: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800",
-      alt: "Candid Moment",
+      src: "/assets/IMG_20250810_232251_1754848537134.jpg",
+      alt: "Achu's Portrait",
       caption: "Natural Beauty"
     },
     {
       id: 3,
-      src: "https://images.unsplash.com/photo-1494790108755-2616b612b647?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800",
-      alt: "Happy Moment",
-      caption: "Pure Joy"
+      src: "/assets/IMG_20250810_231915_1754848537138.jpg",
+      alt: "Achu Reading",
+      caption: "Peaceful Moments"
     },
     {
       id: 4,
-      src: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800",
-      alt: "Thoughtful Moment",
-      caption: "Peaceful Vibes"
+      src: "/assets/IMG_20250810_232315_1754848537139.jpg",
+      alt: "Achu in Traditional Dress",
+      caption: "Radiant in Red"
     },
     {
       id: 5,
-      src: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800",
-      alt: "Radiant Energy",
-      caption: "Shining Bright"
-    },
-    {
-      id: 6,
-      src: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800",
-      alt: "Elegant Portrait",
-      caption: "Simply Amazing"
+      src: "/assets/IMG_20250810_232354_1754848537140.jpg",
+      alt: "Achu's Sweet Selfie",
+      caption: "Pure Joy"
     }
   ];
 

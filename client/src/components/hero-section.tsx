@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 export function HeroSection() {
   // CUSTOMIZATION POINT: Update these values with your friend's information
-  const [friendName] = useState("Best Friend's Name");
+  const [friendName] = useState("Achu");
   const [welcomeMessage] = useState("This little corner of the internet is dedicated entirely to you and all the amazing memories we've shared together.");
 
   const scrollToSection = (sectionId: string) => {
@@ -52,12 +52,12 @@ export function HeroSection() {
           
           <div className="text-center lg:text-right">
             <img
-              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-              alt="Beautiful photo of your friend"
+              src="/assets/IMG_20250810_232336_1754848537138.jpg"
+              alt="Beautiful photo of Achu"
               className="w-full max-w-md mx-auto lg:mx-0 rounded-3xl shadow-2xl transition-transform duration-300 hover-float animate-fadeInRight"
               data-testid="hero-image"
             />
-            {/* CUSTOMIZATION POINT: Replace the src above with a beautiful photo of your friend */}
+            {/* Hero photo of Achu */}
           </div>
         </div>
       </div>
