@@ -12,49 +12,42 @@ export function MemoryTimeline() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
-  // CUSTOMIZATION POINT: Add your actual memories and dates here
+  // Personal memories with Achu
   const memories: Memory[] = [
     {
       id: 1,
-      date: "[Add Date Here]",
+      date: "The Beginning",
       title: "How We First Met",
-      description: "[Add your story about how you first met here. This could be at school, work, through mutual friends, or any other special circumstance that brought you together.]",
+      description: "I still remember how I annoyed you and irritated you for your Hindi slang and still your Hindi is in South Indian accent. But I still remember the Sharbat pyaar thoda zyada he hogya tha aap ki taraf ki aaj bhi hazam nahi hota itna sweet aur pyaara sharbat hayee 😂😂",
       icon: "fas fa-users"
     },
     {
       id: 2,
-      date: "[Add Date Here]",
-      title: "That Hilarious Moment",
-      description: "[Add a funny memory here. Maybe it was an embarrassing moment you shared, a joke that became an inside reference, or a silly adventure you went on together.]",
-      icon: "fas fa-laugh"
+      date: "Movie Time",
+      title: "Our Movie Debates",
+      description: "Tu movie dekhna jaldi aaya kr aur thoda apna movie ka taste sudhar yeh Stree 2 ka sab uper uth kuch aacha dekh! Your movie choices always lead to our hilarious arguments.",
+      icon: "fas fa-film"
     },
     {
       id: 3,
-      date: "[Add Date Here]",
-      title: "When I Realized You Were Special",
-      description: "[Share the moment when you realized this person was going to be an important part of your life. Maybe they helped you through a tough time, or you had a deep conversation that changed everything.]",
-      icon: "fas fa-heart"
+      date: "Always",
+      title: "Your Special Voice",
+      description: "Kuch bhi bol lo teri kach kach aur 'Dheeraj Pata hai aaj kya huva' ka bina jeevan suna toh ho jata hai bhai. Teri awaz mai he 1 sukoon aur maza hai ree, 1 energy hai. I don't know how to express it but hai bhai 😅😅",
+      icon: "fas fa-microphone"
     },
     {
       id: 4,
-      date: "[Add Date Here]",
-      title: "Our Adventure Together",
-      description: "[Describe a trip, adventure, or special outing you took together. This could be a vacation, a spontaneous road trip, or even just exploring your local city.]",
-      icon: "fas fa-plane"
+      date: "Every Day",
+      title: "Our Sweet Kalesh",
+      description: "Tujha gussa dila ne ka maza he kuch hai reeee..... tu meri baato ka itna bura maat mana kr ree na samajh soch kr janee dena ka itna nahi sochna bhai chill maar (Take a deep breath: Inhale, hold for 5 seconds, and then exhale remains constant) 😂😂",
+      icon: "fas fa-fire"
     },
     {
       id: 5,
-      date: "[Add Date Here]",
-      title: "Recent Amazing Memory",
-      description: "[Add a recent memory that shows how your friendship continues to grow and create new special moments together.]",
-      icon: "fas fa-star"
-    },
-    {
-      id: 6,
-      date: "Present Day",
-      title: "Our Friendship Today",
-      description: "[Write about what your friendship means to you now and your hopes for the future. This is a great place to add more personal, heartfelt sentiments.]",
-      icon: "fas fa-infinity"
+      date: "Forever",
+      title: "My Promise",
+      description: "I'll keep on annoying you whole life Achuuuu Babaeeeee 😁😁😁😁 Whether you like it or not, you're stuck with me and all my annoying habits for life!",
+      icon: "fas fa-heart"
     }
   ];
 

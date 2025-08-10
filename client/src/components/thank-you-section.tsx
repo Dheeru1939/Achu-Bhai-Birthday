@@ -5,7 +5,7 @@ export function ThankYouSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   // CUSTOMIZATION POINT: Update this message as needed
-  const birthdayMessage = "Happy Birthday to the most amazing person I know! You're really special to me, and I'm so grateful to have you in my life. Your kindness, laughter, and incredible spirit make every day brighter. I hope this new year brings you all the happiness, success, and adventures you deserve. Thank you for being such an incredible friend — I hope I get to keep annoying you for many more years to come! And yes, don't forget to buy me that protein powder 😂 Have the most wonderful birthday!";
+  const birthdayMessage = "Happy Birthday, Achu! 🎉\n\nI'm not great at saying or expressing things, but you truly are one of the most amazing people I've ever met — with the purest soul, the warmest heart, and a smile that can make anyone's day better. Never, ever change yourself for anyone. You're just a vibe, bhai — even with that little short temper 😏 — and that's what makes you you.\n\nI know I annoy you a lot (sorry… not sorry 😜), but honestly, I wouldn't have it any other way. I'm really lucky to have you in my life, and I hope I get to keep annoying you for a lifetime — whether you enjoy it or not.\n\nWishing you all the happiness, success, and adventures you've ever dreamed of. May every day feel as special as today, and may you live long enough to get endlessly irritated by me. Oh, and yes… don't forget my protein powder gift 😂\n\nHappy, happy, happy birthday, Achuuuuuuuuuu! ❤️";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,9 +46,9 @@ export function ThankYouSection() {
                 <i className="fas fa-heart text-5xl text-primary-pink" data-testid="heart-icon"></i>
               </div>
               
-              <p className="text-xl lg:text-2xl leading-relaxed text-charcoal text-center font-medium" data-testid="birthday-message">
+              <div className="text-xl lg:text-2xl leading-relaxed text-charcoal text-center font-medium whitespace-pre-line" data-testid="birthday-message">
                 {birthdayMessage}
-              </p>
+              </div>
               
               <div className="flex justify-center mt-8 gap-4">
                 <i className="fas fa-star text-2xl text-golden-yellow" data-testid="star-icon-1"></i>
